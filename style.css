@@ -1,0 +1,250 @@
+:root{
+    --primary-color:rgb(0, 84, 103);
+    --secondary-color: rgb(255, 255, 255);
+    --tertiary-color: rgb(200, 200, 200);
+    --danger-color: rgb(154, 38, 38);
+    --success-color: rgb(151, 255, 151);
+    --warning-color: rgb(255, 255, 145);
+    --info-color: rgb(150, 215, 255);
+    --light-color: white;
+    --dark-color: black;
+    --font-light: 300;
+    --font-normal: 400;
+    --font-bold: 500;
+    --font-extra-bold: 600;
+    --font-black: 700;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+}
+
+header {
+    text-align: center;
+    background: radial-gradient(rgb(223, 241, 255), rgb(151, 234, 255));
+    padding-top: 25px;
+    padding-bottom: 25px;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    display:inline-block;
+    border-bottom: 1px solid rgb(151, 234, 255);
+}
+
+h5 {
+    padding-top: 10px;
+}
+
+/* header img {
+    width: 100px;
+} */
+
+body {
+    background: linear-gradient(
+        180deg, 
+        rgba(45,112,1253,0.73) 0%,
+        var(--secondary-color) 100%
+    );
+height: 100vh;
+}
+
+input:not([type="radio"]):not([type="checkbox"]),
+button {
+    appearance: none;
+    border: none;
+    outline: none;
+    background: none;
+    cursor: initial;
+}
+
+
+/* These make the scrollbar aesthetic and pleasing to look at */
+/* width */
+::-webkit-scrollbar {
+    width: 3px;
+}
+/* track */
+::-webkit-scrollbar-track {
+    background: var(--light-color);
+}
+/* handle */
+::-webkit-scrollbar-thumb {
+    background: var(--tertiary-color);
+}
+
+/* to do */
+
+.container {
+    width: 100%;
+    max-width: 34em;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 55%;
+    left: 50%;
+}
+
+#new-task {
+    position: relative;
+    background-color: var(--light-color);
+    padding: 1.5em 1.25em;
+    border-radius: 0.3em;
+    box-shadow: 0 1.25em 1.8em black;
+    display: flex;
+    justify-content: space-between;
+    gap: 1em;
+}
+
+#new-task input {
+    font-size: 1em;
+    border: none;
+    border-bottom: 2px solid var(--tertiary-color);
+    padding: 0.8em 0.5em;
+    color: var(--dark-color);
+    font-weight: var(--font-bold);
+    width: 100%;
+}
+
+#new-task input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+#new-task button {
+    font-size: 1em;
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    outline: none;
+    border: none;
+    border-radius: 0.3em;
+    cursor: pointer;
+    width: 100px;
+}
+
+#tasks {
+    background-color: var(--light-color);
+    position: relative;
+    padding: 0.8em 0.6em;
+    margin-top: 3.8em;
+    width: 100%;
+    box-shadow: 0 1.25em 1.8em black;
+    border-radius: 0.6em;
+}
+
+#list {
+    height: 25rem;
+    width: 100%;
+    padding: 0 1em;
+    overflow-y: scroll;
+}
+
+.task {
+    background-color: var(--light-color);
+    padding: 0.8em 0.6em;
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid var(--secondary-color);
+    cursor: pointer;
+}
+
+.task span {
+    font-size: 0.9em;
+    font-weight: var(--font-normal);
+}
+
+.task button {
+    color: var(--light-color);
+    padding: 0.8em 0;
+    width: 2.8em;
+    border-radius: 0.3em;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.delete {
+    background-color: var(--danger-color);
+}
+
+.edit {
+    background-color: var(--success-color);
+    margin-left: auto;
+    margin-right: 3em;
+}
+
+.completed {
+    text-decoration: line-through;
+}
+
+.todo-item {
+    display: flex;
+    align-items: flex-end;
+    background-color: var(--light-color);
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+
+.todo-item .box {
+    display: block;
+    margin-right: 1rem;
+    cursor: pointer;
+}
+
+.todo-item .todo-content {
+    flex: 1 1 0%;
+}
+
+.todo-item .todo-content input {
+    color: var(--dark-color);
+    font-size: 1.125rem;
+    width: 90%;
+}
+
+.todo-item .actions {
+    display: flex;
+    align-items: center;
+}
+
+.todo-item .actions button {
+    display: block;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+    color: var(--light-color);
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+}
+
+.todo-item .actions button:hover {
+    opacity: 0.75;
+}
+
+.todo-item .actions .edit {
+    margin-right: 0.5rem;
+    background-color: var(--success-color);
+}
+
+.todo-item .actions .delete {
+    background-color: var(--danger-color);
+}
+
+.todo-item.done .todo-content input {
+    text-decoration: line-through;
+    color: var(--tertiary-color);
+}
+
+.todo-item .todo-content input {
+    color: var(--dark-color);
+    font-size: 1.125rem;
+}
+
+@media screen and (max-width: 798px) {
+    .container {
+        padding: 15px;
+    }
+    #task, 
+    #list {
+        padding: 0;
+    }
+}
